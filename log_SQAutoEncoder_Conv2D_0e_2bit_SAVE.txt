@@ -1,0 +1,129 @@
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 79
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [231, 637, 1592]
+Fingerprint: 2dc9d202
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw
+Regression Fingerprint: 7082de3f
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 731
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [231, 637, 1592]
+Fingerprint: 1b7180c7
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw
+Regression Fingerprint: f360c6d1
+Running training 1 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 620
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [231, 637, 1592]
+Fingerprint: ec06783b
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw
+Regression Fingerprint: 228d6c98
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 894
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [231, 637, 1592]
+Fingerprint: 6122bbe3
+SQAutoEncoder Training time: 211.80064375512302
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw
+Regression Fingerprint: fc455b09
+SQAutoEncoder Training time: 27.82479726150632
+Running training 1 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 505
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [231, 637, 1592]
+Fingerprint: 94ac237e
+SQAutoEncoder Training time: 100.50108706299216
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw
+Regression Fingerprint: 7e25f57f
+SQAutoEncoder Training time: 27.022295268252492
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 497
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [231, 637, 1592]
+Fingerprint: d6575fac
+============================================
+
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 254
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [231, 637, 1592]
+Initializing SQAutoEncoder model from /uscms/home/bweiss/nobackup/smart-pixels/SQAutoEncoder_models/model-d6575fac-SQAutoEncoder_Conv2D_0e_2bit-checkpoints/weights.1567-t137504.14-v130896.98.hdf5
+SQAutoEncoder Training time: 17596.671923019006
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw
+Regression Fingerprint: 60409a88
+SQAutoEncoder Training time: 79109.490653121
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw
+Regression Fingerprint: 4f25b532
+===========================================
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 603
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw
+Regression Fingerprint: 32eb16c6
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 639
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw
+Regression Fingerprint: db06be9a
+SQAutoEncoder Training time: 51096.833410879015
+===========================================
+
+=====================SQAutoEncoder_Conv2D_0e_2bit======================
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 828
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw_slim
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw_slim
+Regression Fingerprint: 7f7452e3
+=====================SQAutoEncoder_Conv2D_0e_2bit======================
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 502
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [231, 637, 1592]
+Fingerprint: 704f0962
+=====================SQAutoEncoder_Conv2D_0e_2bit======================
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 735
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [0, 30, 845]
+=====================SQAutoEncoder_Conv2D_0e_2bit======================
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 325
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [1, 30, 845]
+Fingerprint: 4efdbebe
+=====================SQAutoEncoder_Conv2D_0e_2bit======================
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 828
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [1, 30, 845]
+Fingerprint: c80ec4d1
+=====================SQAutoEncoder_Conv2D_0e_2bit======================
+Running training 0 of model SQAutoEncoder_Conv2D_0e_2bit
+Seed: 185
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_0eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [1, 30, 845]
+Fingerprint: 5d97249e
+SQAutoEncoder Training time: 91257.73372862395
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_0eN_raw_slim
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_0eN_raw_slim
+Regression Fingerprint: 7918bd36

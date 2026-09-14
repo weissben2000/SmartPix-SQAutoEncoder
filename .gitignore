@@ -1,0 +1,11 @@
+Plots/
+DAE_trainings/
+DAE_regression_trainings/
+SQ_DAE/
+SQ_DAE_regression/
+CatAccuracy_parquets/
+
+*.png
+*.ipynb_checkpoints/
+Untitled*
+__pycache__/

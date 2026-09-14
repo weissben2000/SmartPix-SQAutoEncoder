@@ -1,0 +1,57 @@
+=====================SQAutoEncoder_Transformer_80e_2bit======================
+Running training 0 of 1 model SQAutoEncoder_Transformer_80e_2bit
+Seed: 887
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [240, 600, 1000]
+Fingerprint: 29ff7a30
+SQAutoEncoder Training time: 42982.33744867903
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_80eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_80eN_raw
+=====================SQAutoEncoder_Transformer_80e_2bit======================
+Running training 0 of 2 model SQAutoEncoder_Transformer_80e_2bit
+Seed: 447
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [240, 600, 1000]
+Fingerprint: d97ecaea
+=====================SQAutoEncoder_Transformer_80e_2bit======================
+Running training 0 of 2 model SQAutoEncoder_Transformer_80e_2bit
+Seed: 176
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [240, 600, 1000]
+Fingerprint: c3bb110f
+SQAutoEncoder Training time: 45371.381128445035
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_80eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_80eN_raw
+=====================SQAutoEncoder_Transformer_80e_2bit======================
+Running training 0 of 2 model SQAutoEncoder_Transformer_80e_2bit
+Seed: 933
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [240, 600, 1000]
+Fingerprint: 9e02c628
+=====================SQAutoEncoder_Transformer_80e_2bit======================
+Running training 0 of 2 model SQAutoEncoder_Transformer_80e_2bit
+Seed: 732
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [240, 600, 1000]
+Fingerprint: b063d87a
+SQAutoEncoder Training time: 47583.40196291008
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_80eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_80eN_raw
+Regression Fingerprint: 42e63deb
+SQAutoEncoder regression Training time: 6838.021755502792
+Running training 1 of 2 model SQAutoEncoder_Transformer_80e_2bit
+Seed: 576
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_80eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [240, 600, 1000]
+Fingerprint: e145e4cd
+SQAutoEncoder Training time: 42540.52867786703
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_80eN_raw
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_80eN_raw
+Regression Fingerprint: 6a37600e
+SQAutoEncoder regression Training time: 7265.240820058854

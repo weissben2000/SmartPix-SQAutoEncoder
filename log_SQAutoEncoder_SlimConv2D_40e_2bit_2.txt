@@ -1,0 +1,32 @@
+=====================SQAutoEncoder_SlimConv2D_40e_2bit_2======================
+Running training 0 of 2 model SQAutoEncoder_SlimConv2D_40e_2bit_2
+Seed: 921
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_40eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_40eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [400, 800, 1200]
+Fingerprint: ddb0fa2c
+SQAutoEncoder Training time: 49091.740315521
+=====================SQAutoEncoder_SlimConv2D_40e_2bit_2======================
+Running training 0 of 1 model SQAutoEncoder_SlimConv2D_40e_2bit_2
+Seed: 321
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_40eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_40eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [400, 800, 1200]
+Fingerprint: a6f2fc3e
+SQAutoEncoder Training time: 68195.53036337899
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_40eN_raw_slim
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_40eN_raw_slim
+Regression Fingerprint: 0da5785b
+SQAutoEncoder regression Training time: 24875.997791938018
+=====================SQAutoEncoder_SlimConv2D_40e_2bit_2======================
+Running training 0 of 1 model SQAutoEncoder_SlimConv2D_40e_2bit_2
+Seed: 287
+SQDAE TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/SQDAE_3srCI_40eN_catgoricalOut_Target_0_30_845
+SQDAE TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/SQDAE_3srCI_40eN_catgoricalOut_Target_0_30_845
+Initial thresholds: [400, 800, 1200]
+Fingerprint: 510948e9
+SQAutoEncoder Training time: 46282.69998268603
+Regression TFR_val directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_val/3srCI_16x16_40eN_raw_slim
+Regression TFR_train directory: /uscms/home/bweiss/nobackup/smart-pixels/tfrecords/TFR_train/3srCI_16x16_40eN_raw_slim
+Regression Fingerprint: 5158b531
+SQAutoEncoder regression Training time: 23046.57459803403

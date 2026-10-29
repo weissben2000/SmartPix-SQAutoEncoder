@@ -9,3 +9,9 @@ CatAccuracy_parquets/
 *.ipynb_checkpoints/
 Untitled*
 __pycache__/
+avg_res_parquets/
+avg_thr_parquets/
+Cat_accuracies/
+train_loop_logs/
+mdmm_trainings/
+

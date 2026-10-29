@@ -203,7 +203,7 @@ def Qdecoder_network(shape, var, Out_bits = 2,  kernel_size=3, n_filters=5, pool
     var = Flatten()(var)
     var = Dense(math.prod(shape)*(2**Out_bits), #activation='softmax'
                )(var)
-    var = Reshape((*shape, 2**Out_bits))(var)
+    var = Reshape((*shape, 2**Out_bits), name="SQAutoEncoder_output")(var)
     return var
 
 def get_min_max(training_generator, validation_generator, logrange=True):
@@ -643,6 +643,80 @@ def Create_SQDAE_transformer_model(input_shape=(16,16,2),
 
     x = Qdecoder_network(input_shape, x, Out_bits = Out_bits, n_filters=n_filters, pool_size=2, kernel_size = conv_kernel_size, conv2d=True)
     model = Model(inputs=inp, outputs=x)
+    return model
+
+def Create_2head_xformer_model(input_shape=(16,16,2),
+                     patch_size=(3,7),
+                     embed_dim=64,
+                     num_heads=4,
+                     ff_dim=128,
+                     num_layers=4,
+                     dropout=0.1,
+                     head_dims=(256,128,64),
+                     threshold_offset=0.0,
+                     n_bits = 2,
+                     initial_thresholds = [247.8, 668.4, 1662.9],
+                     final_outputs=14,
+                     Out_bits = 2, 
+                     n_filters=128, 
+                     conv_kernel_size = 3
+                    ):
+    # Input
+    inp = layers.Input(shape=input_shape, name="raw_input")
+    
+    q_out = SoftQuantizeLayer(
+          n_bits=n_bits,
+         #   initial_range=[-1.0, 1.0], # This shoudl be automatically used for the levels
+          initial_levels=np.array([i for i in range(0,np.power(2,n_bits))], dtype=np.float32),
+          threshold_offset=threshold_offset,
+          initial_thresholds=initial_thresholds,
+          trainable_levels=False,
+          trainable_thresholds=True,
+          initial_k=1.0,
+          trainable_k=False,
+          name="soft_quantizer_output"
+    )(inp)
+    
+    # 1) Extract patches
+    patches = PatchExtractor(patch_size=patch_size)(q_out)
+    
+    # Calculate how many patches we extracted:
+    #   (H // patch_h) * (W // patch_w)
+    # Must do it statically if possible:
+    # e.g. 13//3=4, 21//7=3 => 12 patches total
+    H, W, C = input_shape
+    ph, pw  = patch_size
+    num_patches = (H // ph) * (W // pw)
+    
+    # 2) Encode patches (linear projection + positional embedding)
+    encoded_patches = PatchEncoder(num_patches, embed_dim)(patches)
+    
+    # 3) Apply multiple Transformer encoder blocks
+    x = encoded_patches
+    for _ in range(num_layers):
+        x = transformer_encoder(x,
+                                head_size=embed_dim,
+                                num_heads=num_heads,
+                                ff_dim=ff_dim,
+                                dropout=dropout)
+    
+    # 4) Convert 20 x 64 (patches x embed dims) to 4x4x64
+    x_int = layers.LayerNormalization(epsilon=1e-6)(x)
+    x_int = layers.Permute((2, 1))(x_int)          # Shape becomes (64, 20)
+    x_int = layers.Dense(16)(x_int)                    # Shape becomes (64, 16)
+    x_int = layers.Permute((2, 1))(x_int)              # Shape becomes (16, 64)
+    x_int = layers.Reshape((4, 4, 64))(x_int)
+
+    # 5) Attach SQAutoEncoder decoder
+    SQAutoEncoder = Qdecoder_network(input_shape, x_int, Out_bits = Out_bits, n_filters=n_filters, pool_size=2, kernel_size = conv_kernel_size, conv2d=True)
+    
+    # 6) attach regression network as a second head
+    reg = layers.Flatten()(x)
+    for w in head_dims:
+        reg = layers.Dense(w, activation="relu")(reg)
+    
+    reg = layers.Dense(final_outputs, activation="linear", name="reg_output")(reg)
+    model = Model(inputs=inp, outputs={'SQAutoEncoder_output':SQAutoEncoder, 'reg_output':reg})
     return model
     
 def CreateSQAE_MaxTransformerReg_fromweights(weights_path,

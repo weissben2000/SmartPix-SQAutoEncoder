@@ -718,6 +718,8 @@ def Create_2head_xformer_model(input_shape=(16,16,2),
     reg = layers.Dense(final_outputs, activation="linear", name="reg_output")(reg)
     model = Model(inputs=inp, outputs={'SQAutoEncoder_output':SQAutoEncoder, 'reg_output':reg})
     return model
+
+
     
 def CreateSQAE_MaxTransformerReg_fromweights(weights_path,
                      input_shape=(16,16,2),

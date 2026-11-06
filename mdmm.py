@@ -27,9 +27,6 @@ from keras.losses import CategoricalCrossentropy
 from tensorflow.keras.losses import categorical_crossentropy
 
 
-
-
-
 class OutputConstraint(layers.Layer):
     """Base class: a constraint on the model output with its own multiplier."""
     def __init__(self, scale=1.0, damping=1.0, **kwargs):
@@ -74,6 +71,45 @@ class CCE_EqConstraint(OutputConstraint):
 
     def infeasibility(self, fn_value):
         return self.value - fn_value
+
+    def call(self, outputs, y_true=None):
+        inf = self.infeasibility(self.fn(outputs, y_true=y_true))
+        l_term = tf.math.maximum(self.lmbda, 0.0) * inf
+        damp_term = self.damping * tf.square(inf) / 2
+        return self.scale * (l_term + damp_term)
+
+class CCE_SoftConstraint(OutputConstraint):
+    """minimize CCE(outputs, y_true) down to some epsilon by requiring
+        CCE < epsilon + alpha^2 where alpha is a trainable parameter the network attempts to minimize
+    """
+    needs_truth = True
+    
+    def __init__(self, epsilon, #column, label_column, 
+                 scale=1., damping=1., initial_alpha = 0.0):
+        super().__init__(scale, damping)
+        # self.value = value
+        self.epsilon = epsilon
+        self.scale = scale
+        self.damping = damping
+        self.initial_alpha = initial_alpha
+        self.alpha = self.add_weight(
+                name="loss_alpha",
+                shape=(),
+                initializer=tf.keras.initializers.Constant(initial_alpha),
+                trainable=True
+            )
+        print(self.alpha)
+        
+    def fn(self, outputs, y_true=None):
+        cce_loss_obj = CategoricalCrossentropy(
+            reduction=tf.keras.losses.Reduction.SUM, from_logits=True
+        )
+        CCE = cce_loss_obj(y_true, outputs)
+        # print(CCE.shape, type(CCE))
+        return CCE
+
+    def infeasibility(self, fn_value):
+        return tf.math.maximum(self.epsilon + self.alpha**2 - fn_value, abs(self.alpha))
 
     def call(self, outputs, y_true=None):
         inf = self.infeasibility(self.fn(outputs, y_true=y_true))
@@ -164,6 +200,32 @@ class MinCorrConstraint(OutputConstraint):
         damp_term = self.damping * tf.square(inf) / 2
         return self.scale * (l_term + damp_term)
 
+# class Model_mdmmLoss(tf.keras.Model):
+#     def __init__(self, backbone_model):
+#         super().__init__()
+#         self.backbone = backbone_model
+        
+#         # Register alpha as a trainable weight within the model
+#         self.alpha = self.add_weight(
+#             name="loss_alpha",
+#             shape=(),
+#             initializer=tf.keras.initializers.Constant(2.0),
+#             trainable=True
+#         )
+
+#     def call(self, inputs, training=None):
+#         # Unpack or pass targets alongside inputs if doing custom training
+#         x, y_true = inputs
+#         y_pred = self.backbone(x)
+        
+#         # Calculate standard loss and apply the trainable parameter
+#         base_loss = tf.reduce_mean(tf.square(y_pred - y_true))
+#         custom_loss = self.alpha * base_loss
+        
+#         # Inject the loss directly into the Keras tracking system
+#         self.add_loss(custom_loss)
+        
+#         return y_pred
 
 class MDMM(keras.Model):
     """Wraps a model; adds constraint penalties to the training loss.
@@ -174,10 +236,18 @@ class MDMM(keras.Model):
     val_loss stays the plain compiled loss (test_step is untouched), so
     checkpoint filenames and best_val_loss remain comparable to non-MDMM runs.
     """
-    def __init__(self, model, constraints, constraint_samples=None, name='MDMM', **kwargs):
+    def __init__(self, model, constraints, constraint_samples=None, trainable_alpha=False, name='MDMM', **kwargs):
         super().__init__(name=name, **kwargs)
         self.model = model
         self.constraints_list = list(constraints)
+        # self.trainable_alpha = trainable_alpha
+        # if trainable_alpha:
+        #     self.alpha = self.add_weight(
+        #         name="loss_alpha",
+        #         shape=(),
+        #         initializer=tf.keras.initializers.Constant(2.0),
+        #         trainable=True
+        #     )
         self._lmbda_ids = {id(c.lmbda) for c in self.constraints_list}
         # Evaluate constraints on only the first N samples of each batch: the
         # deterministic second forward pass otherwise doubles activation memory
@@ -220,9 +290,14 @@ class MDMM(keras.Model):
             penalties = {}
             for c in self.constraints_list:
                 if getattr(c, "needs_truth", False):
+                    # if getattr(c, "trainable_alpha", False):
+                    #     penalties["pen_" + c.name] = c(y_det, y_true=y_c, alpha=self.alpha)
+                    # else:
                     penalties["pen_" + c.name] = c(y_det, y_true=y_c)
                 else:
                     penalties["pen_" + c.name] = c(y_det)
+                if hasattr(c, 'alpha'):
+                    self.alpha = c.alpha
             loss = loss_obj + tf.add_n(list(penalties.values()))
 
         grads = tape.gradient(loss, self.trainable_variables)
@@ -234,9 +309,12 @@ class MDMM(keras.Model):
                 grads_and_vars.append((-grad, var))
             else:
                 grads_and_vars.append((grad, var))
+
         self.optimizer.apply_gradients(grads_and_vars)
 
         out = {"loss": loss, "loss_obj": loss_obj}
+        if hasattr(self, 'alpha'):
+            out['alpha'] = self.alpha
         out.update(penalties)
         return out
 
